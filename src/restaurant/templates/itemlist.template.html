@@ -1,0 +1,17 @@
+<div ng-if="$ctrl.items.length>0">
+<h1> Your information is </h1>
+<br>
+<span>First Name: {{$ctrl.items[0].firstname}} </span>
+</br>
+<span>Last Name: {{$ctrl.items[0].lastname}} </span>
+</br>
+<span>Email: {{$ctrl.items[0].email}} </span>
+</br>
+<span>Phone Number: {{$ctrl.items[0].phone}} </span>
+</br>
+<span>Favorite: {{$ctrl.items[0].favoitem}} </span>
+</div>
+</div>
+<div ng-if="$ctrl.items.length==0">
+  Not Signed Up Yet. Sign up Now!
+  </div

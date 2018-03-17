@@ -1,0 +1,71 @@
+<body>
+  <h1>Enter your data</h1>
+
+
+    <form name='regForm' novalidate>
+
+      <input type="text"   style="background-color:black" name="firstname" placeholder="Introduce Lastname"
+        ng-model="reg.user.firstname"
+        required
+        minlength="4"
+        ng-maxlength="10">
+        {{ reg.user.firstname }}
+        <span
+          ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
+          Firstname must be at least 4 characters long
+        </span>
+        <span ng-if="regForm.firstname.$error.maxlength && regForm.username.$touched">
+          Firstname must not be longer than 10 characters
+        </span>
+        <br>
+        <input type="text"   style="background-color:black" name="lastname" placeholder="Introduce Lastname"
+          ng-model="reg.user.lastname"
+          required
+          minlength="4"
+          ng-maxlength="10">
+          {{ reg.user.lastname }}
+          <span
+            ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+            Lastname must be at least 4 characters long
+          </span>
+          <span ng-if="regForm.lastname.$error.maxlength && regForm.lastname.$touched">
+            Lastname must not be longer than 10 characters
+          </span>
+          <br>
+      <input type="email" name="email" style="background-color:black" placeholder="Email"
+        ng-model="reg.user.email"
+        required>
+        <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+          Must be a valid email address: handle@domain format
+        </span>
+        <br>
+
+      <input type="text" name="phone" style="background-color:black"placeholder="Phone ###-###-####"
+        ng-model="reg.user.phone"
+        pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+          Phone must be in the format ###-###-####.
+        </span>
+        <br>
+
+        <input type="text" name="shortname" style="background-color:black"
+          ng-model="reg.user.short_name" placeholder="short_name">
+
+          <br>
+      <button style="background-color:black"
+        ng-disabled="regForm.$invalid"
+        ng-click="reg.submit()">Submit</button>
+
+
+    </form>
+
+  <div id="info" ng-if="reg.items2.length==0">
+     No such menu number exists
+  </div>
+
+  <div id="info" ng-if="reg.items2.length>0">
+    Your information has been saved
+  </div>
+
+</body>
+</html>

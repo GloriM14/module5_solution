@@ -110,6 +110,8 @@ return items2
 
   }
   service.adddata= function(firstname,lastname,email,phone,fav){
+//console.log(items2[0].description);
+console.log(items2.description);
     item1={
       firstname: firstname,
       lastname: lastname,
@@ -122,8 +124,10 @@ return items2
 
   }
   service.getitemdetail= function(){
- console.log("hI");
     return items
+  }
+  service.getitems22= function(){
+    return items2
   }
   service.removeItemtotal = function () {
 

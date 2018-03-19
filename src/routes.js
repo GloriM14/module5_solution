@@ -38,6 +38,9 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     resolve: {
       items: ['MenuDataService', function (MenuDataService) {
         return MenuDataService.getitemdetail();
+      }],
+      items2: ['MenuDataService', function (MenuDataService) {
+        return MenuDataService.getitems22();
       }]
     }
   });
